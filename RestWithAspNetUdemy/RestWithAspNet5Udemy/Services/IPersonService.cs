@@ -1,7 +1,7 @@
 ﻿using RestWithAspNet5Udemy.Model;
 using System.Collections.Generic;
 
-namespace RestWithAspNet5Udemy.Services.Impementations
+namespace RestWithAspNet5Udemy.Services
 {
     public interface IPersonService
     {

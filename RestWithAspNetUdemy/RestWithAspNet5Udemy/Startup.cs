@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RestWithAspNet5Udemy.Services;
+using RestWithAspNet5Udemy.Services.Impementations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +30,11 @@ namespace RestWithAspNet5Udemy
         {
 
             services.AddControllers();
+
+            //Dependency Injection
+            services.AddScoped<IPersonService, PersonServiceImplementation>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestWithAspNet5Udemy", Version = "v1" });
