@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RestWithAspNet5Udemy.Model;
 using RestWithAspNet5Udemy.Services;
 using System;
 using System.Collections.Generic;
@@ -34,5 +35,13 @@ namespace RestWithAspNet5Udemy.Controllers
             if(person == null) return NotFound();
             return Ok(person);
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] Person person)
+        {
+            if(person == null) return BadRequest();
+            return Ok(_personService.Create(person));
+        }
+
     }
 }
